@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Bootstrap 4 Dropdowns within a Navbar</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<style>
+
+
+
+.btn-group {  
+    white-space: nowrap;              
+}
+.btn-group .btn {  
+    float: none;
+    display: inline-block;
+}
+ .btn + .dropdown-toggle { 
+    margin-left: -4px;
+}
+
+.table-responsive {
+  overflow-y: visible !important;
+}
+
+div.drop * 
+ {
+ position;relative;
+ 
+ margin-left:160px;
+ }
+
+body {
+    position: relative;
+  }
+  ul.nav-pills {
+    top: 60px;
+    position: fixed;
+  }
+
+  #section1 {color: #fff; background-color: white;}
+  #section2 {color: #fff; background-color: white;}
+  #section3 {color: #fff; background-color: white;}
+  #section4 {color: #fff; background-color: black;}
+  #section42 {color: #fff; background-color: #009688;}
+  
+  @media screen and (max-width: 810px) {
+    #section1, #section2, #section3, #section41, #section42  {
+      margin-left: 450px;
+    }
+  }
+
+
+div.section1 *
+ {
+ color:black;
+ font-family: Verdana;
+ 
+ }
+ 
+ div.section2 *
+ {
+ color:black;
+ font-family: Verdana;
+ 
+ }
+ 
+ div.section3 *
+ {
+ color:black;
+ font-family: Verdana;
+ 
+ }
+
+
+
+
+.footer-style {
+    padding-top: 10px;
+    background-color: black;
+}
+footer {
+  color: white;
+}
+footer h3 {
+  margin-bottom: 30px;
+    font-weight: 800;
+}
+footer .footer-above {
+  padding-top: 10px;
+  background-color: #2C3E50;
+}
+footer .footer-col {
+  margin-bottom: 10px;
+}
+footer .footer-below {
+  padding: 25px 0;
+  background-color: #233140;
+}
+
+
+.navbar {
+    margin-bottom: 0;
+    background-color: black;
+    z-index: 9999;
+    border: 0;
+    font-size: 12px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+    font-family: Montserrat, sans-serif;
+  }
+  .navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #f4511e !important;
+    background-color: #fff !important;
+  }
+  .navbar li a, .navbar .navbar-brand {
+    color: #fff !important;
+  }
+  
+  .panel-heading {
+    color: #FF00FF !important;
+    background-color: #f4511e !important;
+    padding: 25px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+
+img{
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+ 
+}
+
+.form { 
+    background-color: #1abc9c; /* Green */
+    color: #ffffff;
+  }
+  .content { 
+    background-color: #474e5d; /* Dark Blue */
+    color: #ffffff;
+  }
+  .container { 
+    background-color: #ffffff; /* White */
+    color: #555555;
+  }
+.jumbotron {
+  background-size: 1330px 500px;
+}
+
+
+.carousel-control.right, .carousel-control.left {
+      background-image: none;
+      color: #f4511e;
+  }
+  .carousel-indicators li {
+      border-color: #f4511e;
+  }
+  .carousel-indicators li.active {
+      background-color: #f4511e;}
+	  
+  .carousel-position{
+  padding:10px;
+  }
+</style>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/Footer-with-button-logo.css">
+
+
+
+</head>
+<body>
+
+
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#myPage">RedCem</a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="C:\Users\Erik Origel\Desktop\Contacto.html">Contacto</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="C:\Users\Erik Origel\Desktop\Servicios.html">Servicios</a>
+      </li> 
+    </ul>
+  </div> 
+</nav>
+
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="item active">
+	<div class="carousel-caption d-none d-md-block">
+	<h1>RedCem</h1>
+    <p>Marketing Digital</p>
+  </div>
+      <img class="d-block w-200" src="https://www.fakenhamgardencentre.co.uk/wp-content/uploads/2018/08/Opening-Hours-Banner-Slide-1520x320.jpg" alt="First slide">
+    </div>
+    <div class="item">
+	<div class="carousel-caption d-none d-md-block">
+	<h1>RedCem</h1>
+    <p>Marketing Digital</p>
+  </div>
+      <img class="d-block w-200" src="https://www.fakenhamgardencentre.co.uk/wp-content/uploads/2018/05/about-1520x320.png" alt="Second slide">
+    </div>
+    <div class="item">
+	<div class="carousel-caption d-none d-md-block">
+	<h1>RedCem</h1>
+    <p>Marketing Digital</p>
+  </div>
+      <img class="d-block w-200" src="https://www.fakenhamgardencentre.co.uk/wp-content/uploads/2018/12/crocus-land579066256-1520x320.jpg" alt="Third slide">
+    </div>
+  </div>
+</div>
+
+<!--**********************************************************************************                                  ******************************************************************-->
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <h3>Column 1</h3>
+      <p>Lorem ipsum dolor..</p>
+	<a href="#" title="Dismissible popover" data-toggle="popover" data-trigger="focus" data-content="Click anywhere in the document to close this popover"><button type="button" class="btn btn-primary">Primary</button></a>
+	</div>
+	
+    <div class="col-sm-4">
+      <h3>Column 2</h3>
+      <p>Lorem ipsum dolor..</p>
+	  <a href="#" title="Dismissible popover" data-toggle="popover" data-trigger="focus" data-content="Click anywhere in the document to close this popover"><button type="button" class="btn btn-primary">Primary</button></a>
+    </div>
+    <div class="col-sm-4">
+      <h3>Column 3</h3> 
+      <p>Lorem ipsum dolor..</p>
+	  <a href="#" title="Dismissible popover" data-toggle="popover" data-trigger="focus" data-content="Click anywhere in the document to close this popover"><button type="button" class="btn btn-primary">Primary</button></a>  
+    </div>
+  </div>
+</div>
+
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();   
+});
+</script>
+<br>
+
+<br>
+
+
+
+<footer class="text-center footer-style">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 footer-col">
+                <h3>Dirección</h3>
+                <p>
+                    Villas San Marcos, Avenida San Marcos </br>
+					#239 Mz19 Lt1 Fraccionamiento, 43845 Hgo. 
+                    
+                </p>
+            </div>
+            <div class="col-md-4 footer-col">
+                <h3>Mis redes</h3>
+                <ul class="list-inline">
+                    <li>
+                        <a  target="_blank" href="https://www.facebook.com/redcemmx/" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
+                    </li>
+                    <li>
+                        <a  target="_blank" href="https://wa.me/5215578071829" class="btn-social btn-outline"><i class="fa fa-fw fa-whatsapp"></i></a>
+                    </li>
+                    <li>
+                        <a  target="_blank" href="https://www.redcem.org/#.XQEljS_ORSo.twitter" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
+                    </li>
+                    <li>
+                        <a  target="_blank" href="https://mx.linkedin.com/company/redcemmx" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a>
+                    </li>
+                    <li>
+                        <a  target="_blank" href="https://in.pinterest.com/redcemmx/" class="btn-social btn-outline"><i class="fa fa-fw fa-pinterest"></i></a>
+                    </li>
+					<li>
+                        <a  target="_blank" href="https://www.youtube.com/channel/UCkHVI60i9_hVP8TgcL6gyOA" class="btn-social btn-outline"><i class="fa fa-fw fa-youtube"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-4 footer-col">
+                <h3>RedCem</h3>
+                <p>Lideres En Marketing Digital</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+
+</body>
+</html>                                                        
